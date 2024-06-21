@@ -28,10 +28,10 @@ public class Main {
         System.out.println(listOfNumbers.get(listOfNumbers.size()/2));
         System.out.println("Maximum value: " + findMaxValueInList(listOfNumbers));
         System.out.println("Minimum value: " + findMinValueInList(listOfNumbers));
-        System.out.printf("Arithmetic mean: %.1f%n", calculateArithmeticMean(listOfNumbers));
+        System.out.printf("Arithmetic mean: %.2f%n", calculateArithmeticMean(listOfNumbers));
         System.out.println("Largest increasing sequence: " + findLargestIncreasingSequence(listOfNumbers));
         System.out.println("Largest decreasing sequence: " + findLargestDecreasingSequence(listOfNumbers));
-        System.out.printf("Median: %.1f%n", calculateMedian(listOfNumbers));
+        System.out.printf("Median: %.2f%n", calculateMedian(listOfNumbers));
         System.out.println((System.currentTimeMillis() - startTime) / 1000 + " seconds");
     }
 
