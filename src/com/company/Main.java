@@ -16,16 +16,19 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
         var startTime = System.currentTimeMillis();
+        Path currentRelativePath = Paths.get("");
+        String currentPath = currentRelativePath.toAbsolutePath().toString();
 
-        String relativePath = "/untitled6/src/com/company/bigData.txt";
-        Path path = Paths.get(relativePath);
+        String relativePath = "src/com/company/bigData.txt";
+        Path path = Paths.get(currentPath, relativePath);
+
         List<String> l = Files.readAllLines(path, StandardCharsets.UTF_8);
-        List<Integer> listOfNumbers = new ArrayList<>(Integer.MAX_VALUE/10);
+        List<Integer> listOfNumbers = new ArrayList<>(Integer.MAX_VALUE / 10);
         for (String s : l) {
             listOfNumbers.add(Integer.parseInt(s));
         }
         assert listOfNumbers.size() > 0;
-        System.out.println(listOfNumbers.get(listOfNumbers.size()/2));
+        System.out.println(listOfNumbers.get(listOfNumbers.size() / 2));
         System.out.println("Maximum value: " + findMaxValueInList(listOfNumbers));
         System.out.println("Minimum value: " + findMinValueInList(listOfNumbers));
         System.out.printf("Arithmetic mean: %.2f%n", calculateArithmeticMean(listOfNumbers));
