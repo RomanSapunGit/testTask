@@ -11,6 +11,7 @@ import java.util.List;
 
 // sources: https://stackoverflow.com/questions/41275278/java-paths-get-readallbytespath-not-working-with-relative-path
 // https://stackoverflow.com/questions/11955728/how-to-calculate-the-median-of-an-array
+// You can change txt file to one you want in line 23
 
 public class Main {
 
