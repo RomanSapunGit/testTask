@@ -11,12 +11,11 @@ import java.util.List;
 
 // sources: https://stackoverflow.com/questions/41275278/java-paths-get-readallbytespath-not-working-with-relative-path
 // https://stackoverflow.com/questions/11955728/how-to-calculate-the-median-of-an-array
-// You can change txt file to one you want in line 23
+// You can change txt file to one you want in line 22
 
 public class Main {
 
     public static void main(String[] args) throws IOException {
-        var startTime = System.currentTimeMillis();
         Path currentRelativePath = Paths.get("");
         String currentPath = currentRelativePath.toAbsolutePath().toString();
 
@@ -28,7 +27,7 @@ public class Main {
         for (String s : l) {
             listOfNumbers.add(Integer.parseInt(s));
         }
-        assert listOfNumbers.size() > 0;
+        if(listOfNumbers.isEmpty()) throw new IllegalArgumentException();
         System.out.println(listOfNumbers.get(listOfNumbers.size() / 2));
         System.out.println("Maximum value: " + findMaxValueInList(listOfNumbers));
         System.out.println("Minimum value: " + findMinValueInList(listOfNumbers));
@@ -36,7 +35,6 @@ public class Main {
         System.out.println("Largest increasing sequence: " + findLargestIncreasingSequence(listOfNumbers));
         System.out.println("Largest decreasing sequence: " + findLargestDecreasingSequence(listOfNumbers));
         System.out.printf("Median: %.2f%n", calculateMedian(listOfNumbers));
-        System.out.println((System.currentTimeMillis() - startTime) / 1000 + " seconds");
     }
 
     public static Integer findMaxValueInList(List<Integer> listOfNumbers) {
